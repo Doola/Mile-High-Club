@@ -1,3 +1,5 @@
+package MileHighClub;
+
 import java.io.FileNotFoundException;
 import java.util.Hashtable;
 import java.util.Iterator;
