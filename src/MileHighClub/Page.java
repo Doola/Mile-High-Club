@@ -10,7 +10,8 @@ public class Page {
 		tuples = new Hashtable<Integer, Tuple>();
 	}
 
-	public void inserttuple(Tuple t) {    // The serializable part should go here
+	public void insertTupleInPage(Tuple t) { // The serializable part should go
+												// here
 		this.tuples.put(Ntuples++, t);
 	}
 

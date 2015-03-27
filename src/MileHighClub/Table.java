@@ -6,6 +6,7 @@ import java.util.Hashtable;
 public class Table {
 	static Hashtable<String, Table> tables = new Hashtable<String, Table>();;
 	String name;
+	String primaryKey;
 	ArrayList<String> cols;
 	Hashtable<String, String> coltype;
 	Hashtable<Integer, Page> pages;
@@ -13,20 +14,21 @@ public class Table {
 	int Npages = 0;
 
 	public Table(String name, Hashtable<String, String> coltype,
-			Hashtable<String, String> refs) {
+			Hashtable<String, String> refs, String primaryKey) {
 		this.name = name;
 		this.coltype = coltype;
 		this.refs = refs;
+		this.primaryKey = primaryKey;
 		this.cols = new ArrayList<String>(coltype.keySet());
 		tables.put(name, this);
 	}
 
-	public void inserttuple(Tuple t) {
-		Page p = pages.get(Npages);
+	public void insertTupleInTable(Tuple t) {
+		Page p = this.pages.get(Npages);
 		if (p.isFull()) {
 			p = new Page();
 			Npages++;
 		}
-		p.inserttuple(t);
+		p.insertTupleInPage(t);
 	}
 }

@@ -21,7 +21,7 @@ public class DBApp implements DatabaseInterface {
 			Hashtable<String, String> htblColNameType,
 			Hashtable<String, String> htblColNameRefs, String strKeyColName)
 			throws FileNotFoundException, IOException {
-		Table T = new Table(strTableName, htblColNameType, htblColNameRefs);
+		Table T = new Table(strTableName, htblColNameType, htblColNameRefs, strKeyColName);
 		MetaDataHandler mt = new MetaDataHandler();
 		mt.addTable(strTableName, htblColNameType, htblColNameRefs,
 				strKeyColName);
@@ -40,7 +40,7 @@ public class DBApp implements DatabaseInterface {
 			Hashtable<String, String> htblColNameValue) {
 		Table T = Table.tables.get(strTableName);
 		Tuple x = new Tuple(htblColNameValue);
-		T.inserttuple(x);
+		T.insertTupleInTable(x);
 	}
 
 	public void deleteFromTable(String strTableName,
