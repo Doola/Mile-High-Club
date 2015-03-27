@@ -29,7 +29,7 @@ public class DBApp implements DatabaseInterface {
 	}
 
 	public void createIndex(String strTableName, String strColName) {
-
+		
 	}
 
 	public void createMultiDimIndex(String strTableName,
