@@ -8,10 +8,8 @@ import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Iterator;
 
-
 public class DBApp implements DatabaseInterface {
 	static String metadata = "metadata.csv";
-
 	// For now i will read all data in the CSV file add the new table info to
 	// the
 	// string and then add all data to the CSV file.

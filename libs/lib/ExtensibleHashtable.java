@@ -1,14 +1,16 @@
+package lib;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-public class ExtensibleHash {
+
+public class ExtensibleHashtable {
 
 	ArrayList<String> prefix = new ArrayList<String>();
 	ArrayList<Bucket> buckets = new ArrayList<Bucket>();
 	Hashtable<String, Bucket> maps = new Hashtable<String, Bucket>();
 	final int BUCKET_SIZE = 2;
 
-	public ExtensibleHash() {
+	public ExtensibleHashtable() {
 		prefix.add("0");
 		prefix.add("1");
 		buckets.add(new Bucket());
@@ -133,3 +135,4 @@ public class ExtensibleHash {
 		}
 		insertIndex(index);
 	}
+}
