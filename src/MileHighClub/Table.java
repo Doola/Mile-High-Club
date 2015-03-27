@@ -32,8 +32,8 @@ public class Table {
 	public void insertTupleInTable(Tuple t) {
 		Page p = this.pages.get(Npages);
 		if (p.isFull()) {
-			p = new Page();
 			Npages++;
+			p = new Page(Npages,name);
 		}
 		p.insertTupleInPage(t);
 	}

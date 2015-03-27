@@ -7,8 +7,8 @@ import java.util.Hashtable;
 
 public class MetaDataHandler {
 
-	private static String metaDataPath = "/Users/ahmedabodeif1/GitHub/Mile-High-Club/data/metadata.csv";
-	private static String tablePagesPath = "/Users/ahmedabodeif1/GitHub/Mile-High-Club/data/tablePages.csv";
+	private static String metaDataPath = "/data/metadata.csv";
+	private static String tablePagesPath = "/data/tablePages.csv";
 
 	// In this method we read the data currently in the metaData file
 	// then we add the new table's info to the ArrayList and then write all
