@@ -1,6 +1,7 @@
 package MileHighClub;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Iterator;
 
@@ -11,7 +12,7 @@ public interface DatabaseInterface {
 	public void createTable(String strTableName,
 			Hashtable<String, String> htblColNameType,
 			Hashtable<String, String> htblColNameRefs, String strKeyColName)
-			throws DBAppException, FileNotFoundException;
+			throws DBAppException, FileNotFoundException, IOException;
 
 	public void createIndex(String strTableName, String strColName)
 			throws DBAppException;
