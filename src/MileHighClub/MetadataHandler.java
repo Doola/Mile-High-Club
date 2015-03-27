@@ -8,6 +8,7 @@ import java.util.Hashtable;
 public class MetaDataHandler {
 
 	private static String metaDataPath = "/Users/ahmedabodeif1/GitHub/Mile-High-Club/data/metadata.csv";
+	private static String tablePagesPath = "/Users/ahmedabodeif1/GitHub/Mile-High-Club/data/tablePages.csv";
 
 	// In this method we read the data currently in the metaData file
 	// then we add the new table's info to the ArrayList and then write all
@@ -42,7 +43,12 @@ public class MetaDataHandler {
 		csv.write(metaDataPath, newMeta);
 
 	}
-	
-	
 
+	
+	// called when save all called
+	public void updateTablePages() throws IOException {
+		Table t = new Table();
+		CSVHandler csv = new CSVHandler();
+		csv.writeTablePages(tablePagesPath, t.tables);
+	}
 }

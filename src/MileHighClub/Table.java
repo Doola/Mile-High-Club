@@ -13,6 +13,12 @@ public class Table {
 	Hashtable<String, String> refs;
 	int Npages = 0;
 
+	// Will be used to create a placebo table to retrieve the Hashtable containing all created tables
+	// to write the new values of tables/pages to tablePages.csv 
+	public Table() {
+
+	}
+
 	public Table(String name, Hashtable<String, String> coltype,
 			Hashtable<String, String> refs, String primaryKey) {
 		this.name = name;

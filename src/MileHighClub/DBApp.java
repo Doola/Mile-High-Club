@@ -1,11 +1,13 @@
 package MileHighClub;
 
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Iterator;
+
 
 public class DBApp implements DatabaseInterface {
 	static String metadata = "metadata.csv";
@@ -21,7 +23,8 @@ public class DBApp implements DatabaseInterface {
 			Hashtable<String, String> htblColNameType,
 			Hashtable<String, String> htblColNameRefs, String strKeyColName)
 			throws FileNotFoundException, IOException {
-		Table T = new Table(strTableName, htblColNameType, htblColNameRefs, strKeyColName);
+		Table T = new Table(strTableName, htblColNameType, htblColNameRefs,
+				strKeyColName);
 		MetaDataHandler mt = new MetaDataHandler();
 		mt.addTable(strTableName, htblColNameType, htblColNameRefs,
 				strKeyColName);
@@ -54,10 +57,17 @@ public class DBApp implements DatabaseInterface {
 
 	}
 
+	// I will need to call write tablePages with csv handler to save number of
+	// pages we keda
 	public void saveAll() {
-
+		MetaDataHandler meta = new MetaDataHandler();
+		try {
+			meta.updateTablePages();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-	
+
 	public static void main(String[] args) {
 		Hashtable<String, String> nameType = new Hashtable<String, String>();
 		nameType.put("ID", "java.lang.Integer");
@@ -75,6 +85,8 @@ public class DBApp implements DatabaseInterface {
 			System.out.println("el reader aw el writer bystahbel");
 		}
 		
+		
+
 	}
 
 }
